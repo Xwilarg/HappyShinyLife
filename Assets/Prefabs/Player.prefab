@@ -226,7 +226,19 @@ MonoBehaviour:
     m_ActionId: c041d498-ea56-4599-a0f6-6736ef30a4b3
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1193834344128270493}
+        m_TargetAssemblyTypeName: HappyShinyLife.PlayerController, Assembly-CSharp
+        m_MethodName: OnNextDialogue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 9f8ee0a8-0472-4351-afc1-4b2ed8678d41
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -269,10 +281,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0e6f031b-46b2-464d-8637-607c584cfc08
     m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0f82d58e-f18f-4a83-8017-2996e3830e79
-    m_ActionName: Story/Click[/Mouse/leftButton,/Keyboard/space,/Keyboard/enter,/Keyboard/numpadEnter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

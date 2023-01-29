@@ -12,25 +12,35 @@ namespace HappyShinyLife
         private TMP_Text _storyText;
 
         private int _index = 1;
+        private int _maxIndex;
+        private string _baseString;
+
+        public static StoryManager Instance;
 
         private void Awake()
         {
-            _storyText.text = Translate.Instance.Tr("intro1");
+            Instance = this;
+            Load("intro", 9);
         }
 
-        public void OnNextDialogue(InputAction.CallbackContext value)
+        private void Load(string baseString, int maxCount)
         {
-            if (value.performed)
+            _maxIndex = maxCount;
+            _baseString = baseString;
+            _storyText.text = Translate.Instance.Tr($"{baseString}1");
+            _storyText.gameObject.SetActive(true);
+        }
+
+        public void NextDialogue()
+        {
+            _index++;
+            if (_index > _maxIndex)
             {
-                _index++;
-                if (_index == 10)
-                {
-                    SceneManager.LoadScene("Main");
-                }
-                else
-                {
-                    _storyText.text = Translate.Instance.Tr($"intro{_index}");
-                }
+                _storyText.gameObject.SetActive(false);
+            }
+            else
+            {
+                _storyText.text = Translate.Instance.Tr($"{_baseString}{_index}");
             }
         }
     }

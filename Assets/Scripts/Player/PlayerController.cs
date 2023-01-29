@@ -22,5 +22,13 @@ namespace HappyShinyLife
         {
             _mov = value.ReadValue<Vector2>().normalized;
         }
+
+        public void OnNextDialogue(InputAction.CallbackContext value)
+        {
+            if (value.performed)
+            {
+                StoryManager.Instance.NextDialogue();
+            }
+        }
     }
 }
