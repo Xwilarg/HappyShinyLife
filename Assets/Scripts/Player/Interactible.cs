@@ -9,14 +9,14 @@ namespace HappyShinyLife.Player
         private InteractionType _interaction;
 
         [SerializeField]
-        private string _argument;
+        private string[] _argument;
 
         public void Invoke()
         {
             switch (_interaction)
             {
                 case InteractionType:
-                    StoryManager.Instance.Load(_argument, 1);
+                    StoryManager.Instance.Load(_argument[0], int.Parse(_argument[1]));
                     break;
 
                 default: throw new NotImplementedException(nameof(_interaction));

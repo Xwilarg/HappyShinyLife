@@ -10,6 +10,9 @@ namespace HappyShinyLife.Player
 
         private Interactible _target;
 
+        [SerializeField]
+        private GameObject _interactionHelp;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -19,7 +22,7 @@ namespace HappyShinyLife.Player
         {
             if (StoryManager.Instance.IsInStory)
             {
-                return;
+                _rb.velocity = Vector2.zero;
             }
             _rb.velocity = new Vector2(_mov.x * 5f, _rb.velocity.y);
         }
@@ -29,6 +32,7 @@ namespace HappyShinyLife.Player
             if (collision.TryGetComponent(out Interactible target))
             {
                 _target = target;
+                _interactionHelp.SetActive(true);
             }
         }
 
@@ -37,6 +41,7 @@ namespace HappyShinyLife.Player
             if (collision.TryGetComponent<Interactible>(out _))
             {
                 _target = null;
+                _interactionHelp.SetActive(false);
             }
         }
 

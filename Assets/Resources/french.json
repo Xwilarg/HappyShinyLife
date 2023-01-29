@@ -9,5 +9,10 @@
     "intro8": "Je vais me faire mon propre groupe d'amis où tout le monde m'adorera!",
     "intro9": "Et ainsi démarra l'histoire de Lilly la fée",
 
-    "school1": "Je ne retournerai pas à l'école !"
+    "school1": "Je ne retournerai pas à l'école !",
+
+    "closed1": "Il y a quelque chose d'écrit sur la porte:",
+    "closed2": "Ce n'est pas encore implémenté alors revenez plus tard",
+    "closed3": "...",
+    "closed4": "J'ai aucune idée de ce que ça veut dire !"
 }

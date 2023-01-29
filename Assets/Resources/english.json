@@ -9,5 +9,10 @@
     "intro8": "I'll make my own group of friends where everyone will love me!",
     "intro9": "Thus began the story of Lilly the fairy",
 
-    "school1": "I'm not going back to school!"
+    "school1": "I'm not going back to school!",
+
+    "closed1": "There is something written on the door:",
+    "closed2": "I didn't implement that yet so come back later",
+    "closed3": "...",
+    "closed4": "I have no idea what it mean!"
 }
