@@ -1,8 +1,6 @@
 using HappyShinyLife.Translation;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 namespace HappyShinyLife
 {
@@ -23,10 +21,11 @@ namespace HappyShinyLife
             Load("intro", 9);
         }
 
-        private void Load(string baseString, int maxCount)
+        public void Load(string baseString, int maxCount)
         {
             _maxIndex = maxCount;
             _baseString = baseString;
+            _index = 1;
             _storyText.text = Translate.Instance.Tr($"{baseString}1");
             _storyText.gameObject.SetActive(true);
         }
@@ -34,7 +33,7 @@ namespace HappyShinyLife
         public void NextDialogue()
         {
             _index++;
-            if (_index > _maxIndex)
+            if (!IsInStory)
             {
                 _storyText.gameObject.SetActive(false);
             }
@@ -43,5 +42,7 @@ namespace HappyShinyLife
                 _storyText.text = Translate.Instance.Tr($"{_baseString}{_index}");
             }
         }
+
+        public bool IsInStory => _index <= _maxIndex;
     }
 }
