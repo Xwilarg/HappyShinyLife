@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 363094402}
   - component: {fileID: 363094401}
-  - component: {fileID: 363094400}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -76,14 +75,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &363094400
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363094399}
-  m_Enabled: 1
 --- !u!1 &4244460392503766619
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +87,8 @@ GameObject:
   - component: {fileID: 4244460392503766616}
   - component: {fileID: 4244460392503766622}
   - component: {fileID: -3182873889073620519}
+  - component: {fileID: 1193834344128270493}
+  - component: {fileID: -4728709630842501452}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -213,7 +206,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1193834344128270493}
+        m_TargetAssemblyTypeName: HappyShinyLife.PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8d86088d-68c3-4104-b484-d638ca5ea60d
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -264,8 +269,45 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0e6f031b-46b2-464d-8637-607c584cfc08
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f82d58e-f18f-4a83-8017-2996e3830e79
+    m_ActionName: Story/Click[/Mouse/leftButton,/Keyboard/space,/Keyboard/enter,/Keyboard/numpadEnter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 363094401}
+--- !u!114 &1193834344128270493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244460392503766619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b99ecd2487ab3e4caa3633dc3b23973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &-4728709630842501452
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244460392503766619}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
